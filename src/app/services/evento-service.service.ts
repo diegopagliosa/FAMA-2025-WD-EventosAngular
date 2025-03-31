@@ -10,15 +10,21 @@ export class EventoServiceService {
   private url = "http://localhost:8000";
   constructor(private http: HttpClient) { }
   //http://localhost:8000/eventos
+
   getEventos(): Observable<Evento[]> {
     var metodo = "/eventos";
     return this.http.get<Evento[]>(this.url + metodo);
   }
+
   getEvento(id_evento: number): Observable<Evento> {
     var metodo = "/eventos?id_evento=" + id_evento;
     return this.http.get<Evento>(this.url + metodo);
   }
 
+  addEvento(evento: Evento): Observable<any> {
+    var metodo = "/eventos";
+    return this.http.post<Evento>(this.url + metodo, evento);
+  }
 }
 
 export interface Evento {

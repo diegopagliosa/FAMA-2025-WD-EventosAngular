@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Inclusão de Evento</h3>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="enviarEvento()">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" [(ngModel)]="evento.nome" name="nome">
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" class="form-control" name="descricao" [(ngModel)]="evento.descricao">
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" class="form-control" name="endereco" [(ngModel)]="evento.endereco">
+                </div>
+                <div class="form-group">
+                    <label for="data_evento">Data:</label>
+                    <input type="date" class="form-control" name="data_evento" [(ngModel)]="evento.data_evento">
+                </div>
+                <div class="form-group">
+                    <label for="max_vagas">Máximo de Vagas:</label>
+                    <input type="number" class="form-control" name="max_vagas" [(ngModel)]="evento.max_vagas">
+                </div>
+                <div *ngIf="erro" class="alert alert-danger">{{msgErro}} </div>
+                <button type="submit" class="btn btn-primary">Criar Evento</button>
+            </form>
+        </div>
+    </div>
+</div>

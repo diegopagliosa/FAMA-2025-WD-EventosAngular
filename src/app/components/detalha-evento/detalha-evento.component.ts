@@ -26,6 +26,10 @@ export class DetalhaEventoComponent {
         console.error('Erro ao carregar evento: ' + this.idEvento, error);
       }
     );
-   
+
+  }
+
+  voltarPagina() {
+    window.history.back()
   }
 }
